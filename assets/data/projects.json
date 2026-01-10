@@ -1,0 +1,187 @@
+[
+  {
+    "title": "Sales Forecasting MLOps Platform",
+    "summary": "Production-grade forecasting pipeline orchestrated with Airflow, tracked with MLflow, and containerized for repeatable training & inference.",
+    "tags": [
+      "de",
+      "mle",
+      "ds",
+      "swe"
+    ],
+    "stack": [
+      "Python",
+      "Airflow",
+      "MLflow",
+      "Docker",
+      "MinIO",
+      "Optuna",
+      "XGBoost",
+      "Prophet",
+      "Streamlit"
+    ],
+    "links": {
+      "github": "",
+      "demo": ""
+    },
+    "highlights": [
+      "Automated validation \u2192 feature engineering \u2192 training \u2192 tracking \u2192 artifacts",
+      "Ensemble forecasting with Optuna tuning; tracked metrics + diagnostics in MLflow",
+      "Containerized services for reproducible runs and easy local deployment"
+    ]
+  },
+  {
+    "title": "SQL-RAG (LLM-powered SQL Query)",
+    "summary": "Streamlit app that turns natural language into SQL using a local LLM + RAG over schema metadata, with live execution on SQLite.",
+    "tags": [
+      "de",
+      "ds",
+      "mle",
+      "swe",
+      "da"
+    ],
+    "stack": [
+      "Python",
+      "RAG",
+      "LLM",
+      "Streamlit",
+      "SQLite",
+      "REST API"
+    ],
+    "links": {
+      "github": "",
+      "demo": ""
+    },
+    "highlights": [
+      "Schema-aware retrieval to improve accuracy on complex joins",
+      "Automated table creation, inserts, and real-time query execution",
+      "Designed as a reusable service pattern for analytics teams"
+    ]
+  },
+  {
+    "title": "Stream Forge (Real-time Data Streaming)",
+    "summary": "End-to-end streaming pipeline: API \u2192 Kafka \u2192 PostgreSQL \u2192 Spark transforms \u2192 Cassandra, plus AWS S3 \u2192 Glue \u2192 Athena flow.",
+    "tags": [
+      "de",
+      "swe"
+    ],
+    "stack": [
+      "Python",
+      "Airflow",
+      "Kafka",
+      "PostgreSQL",
+      "Spark",
+      "Cassandra",
+      "AWS Glue",
+      "Athena",
+      "S3",
+      "Lambda"
+    ],
+    "links": {
+      "github": "",
+      "demo": ""
+    },
+    "highlights": [
+      "Built streaming ingestion with Kafka and batch/stream processing with Spark",
+      "Persisted to operational + analytical stores (Postgres/Cassandra)",
+      "Implemented AWS Glue crawlers + Spark ETL to Parquet for Athena analytics"
+    ]
+  },
+  {
+    "title": "Social Pulse (Social Media Analysis System)",
+    "summary": "API extraction + storage + NLP/topic modeling to assess social presence across YouTube, Reddit, X, and Tumblr.",
+    "tags": [
+      "ds",
+      "da",
+      "de"
+    ],
+    "stack": [
+      "Airflow",
+      "MongoDB",
+      "NLP",
+      "Topic Modeling",
+      "APIs"
+    ],
+    "links": {
+      "github": "",
+      "demo": ""
+    },
+    "highlights": [
+      "Automated API ingestion jobs with Airflow",
+      "Stored raw + processed data in MongoDB for flexible exploration",
+      "Generated company profile insights via NLP + topic modeling"
+    ]
+  },
+  {
+    "title": "Job Market Analysis",
+    "summary": "NLP + ML analysis on 100,000+ job descriptions to identify skill demand, role clusters, and salary trends.",
+    "tags": [
+      "ds",
+      "da"
+    ],
+    "stack": [
+      "Python",
+      "NLP",
+      "Clustering",
+      "Power BI",
+      "AWS"
+    ],
+    "links": {
+      "github": "",
+      "demo": ""
+    },
+    "highlights": [
+      "Extracted top in-demand skills using text mining",
+      "Clustered roles into 5 groups based on qualifications and experience",
+      "Built interactive dashboards to visualize salary trends and skill pairs"
+    ]
+  },
+  {
+    "title": "Lend Lens (Bank Loan Analytics)",
+    "summary": "SQL + Tableau analytics dashboard covering loan applications, funded amounts, interest rates, and DTI metrics.",
+    "tags": [
+      "da",
+      "ds"
+    ],
+    "stack": [
+      "SQL",
+      "Tableau",
+      "Excel"
+    ],
+    "links": {
+      "github": "",
+      "demo": ""
+    },
+    "highlights": [
+      "Created interactive report for key loan KPIs and drill-downs",
+      "Visualized monthly trends, regional patterns, loan purpose, and ownership",
+      "Designed stakeholder-friendly metrics and views for decisioning"
+    ]
+  },
+  {
+    "title": "Eye-Move (Assistive Eye-Typing System)",
+    "summary": "CNN-based gaze tracking + NLP prediction to enable on-screen typing for motor-impaired users; deployed on AWS.",
+    "tags": [
+      "mle",
+      "ds",
+      "swe"
+    ],
+    "stack": [
+      "Python",
+      "TensorFlow",
+      "PyTorch",
+      "CNN",
+      "NLP",
+      "AWS"
+    ],
+    "links": {
+      "github": "",
+      "demo": "",
+      "paper": "https://ieeexplore.ieee.org/document/9792928"
+    },
+    "highlights": [
+      "Built gaze tracking model using CNNs for accessible text input",
+      "Improved typing efficiency with n-gram prediction to reduce keystrokes",
+      "Integrated smart-home controls to demonstrate real-world ML impact"
+    ]
+  }
+]

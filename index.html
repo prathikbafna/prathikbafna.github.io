@@ -3,361 +3,97 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Prathik Bharath Jain — Data Scientist / Data Engineer</title>
-  <meta name="description" content="I turn messy data into useful products. Streaming pipelines, analytics models, and dashboards that ship and drive decisions." />
-  <meta name="author" content="Prathik Bharath Jain" />
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Prathik Bharath Jain — Data Scientist / Data Engineer" />
-  <meta property="og:description" content="Streaming pipelines, analytics models, and dashboards that ship and drive decisions." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://your-username.github.io/" />
-  <meta property="og:image" content="assets/og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Prathik Bharath Jain — Portfolio" />
-  <meta name="twitter:description" content="I build pragmatic ML & data systems that ship." />
-  <meta name="twitter:image" content="assets/og-image.jpg" />
-  <link rel="icon" href="assets/favicon.ico" />
-  <style>
-    :root{
-      --bg: #0b0b0c;      /* page background */
-      --surface:#141417;  /* cards / header */
-      --text:#ececec;     /* body text */
-      --muted:#b8b8bd;    /* secondary text */
-      --line:#27272b;     /* borders */
-      --brand:#28d7c1;    /* teal accent */
-      --brand-2:#76e4d8;  /* lighter accent */
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
-    @media (prefers-color-scheme: light){
-      :root{ --bg:#fafafa; --surface:#ffffff; --text:#101011; --muted:#4b4b51; --line:#e7e7ec; --shadow:0 10px 30px rgba(0,0,0,.08); }
-    }
-    html,body{height:100%}
-    body{margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji"; background:var(--bg); color:var(--text);}
-    .container{max-width:1100px; margin-inline:auto; padding:0 20px}
-    a{color:inherit; text-decoration:none}
-    img{max-width:100%; display:block}
-    /* Header */
-    header{position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background:color-mix(in oklab, var(--bg) 85%, transparent); border-bottom:1px solid var(--line); z-index:999}
-    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px}
-    .brand .logo{inline-size:28px; block-size:28px; border-radius:8px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); display:grid; place-items:center; color:#0d0f10; font-weight:800}
-    .nav ul{display:flex; gap:22px; list-style:none; margin:0; padding:0}
-    .nav a{font-size:14px; color:var(--muted)}
-    .nav a:hover{color:var(--text)}
-    .nav .actions{display:flex; gap:10px}
-    .btn{display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border:1px solid var(--line); border-radius:12px; background:var(--surface); color:var(--text); box-shadow:var(--shadow); font-size:14px}
-    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#031f1d; border-color:transparent; font-weight:700}
-    .btn.ghost{background:transparent; box-shadow:none}
-    /* Mobile menu */
-    .menu-btn{display:none}
-    @media (max-width: 800px){
-      .nav ul{display:none}
-      .menu-btn{display:inline-flex}
-    }
-    /* Sections */
-    section{scroll-margin-top:80px}
-    .hero{padding:60px 0 24px}
-    .hero-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:28px}
-    .kicker{color:var(--brand); font-weight:600; letter-spacing:.2px; font-size:14px}
-    h1{font-size:44px; line-height:1.1; margin:12px 0}
-    .lead{color:var(--muted); font-size:18px; max-width:58ch}
-    .hero-cards{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:14px; box-shadow:var(--shadow)}
-    .aspect-video{aspect-ratio:16/9; border-radius:12px; overflow:hidden; border:1px solid var(--line)}
-    .meta{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px; font-size:14px; color:var(--muted)}
-    /* Section titles */
-    .section-head{display:flex; align-items:end; justify-content:space-between; gap:12px; margin:28px 0 6px}
-    .section-head h2{font-size:28px; margin:0}
-    .muted{color:var(--muted)}
-    /* Cards grid */
-    .grid{display:grid; gap:18px}
-    .grid.projects{grid-template-columns: repeat(12, 1fr)}
-    .project{grid-column: span 4; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:var(--shadow)}
-    .project .body{padding:14px}
-    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
-    .chip{border:1px solid var(--line); border-radius:999px; padding:4px 10px; font-size:12px; color:var(--muted)}
-    .links{display:flex; gap:14px; margin-top:10px; font-size:14px}
-    .links a{color:var(--brand)}
-    @media (max-width:1024px){.project{grid-column: span 6}}
-    @media (max-width:680px){.hero-grid{grid-template-columns:1fr}.project{grid-column: span 12}}
-    /* Experience */
-    .xp-list{display:grid; gap:14px}
-    .xp{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:16px; box-shadow:var(--shadow)}
-    .xp h3{margin:0 0 2px 0; font-size:16px}
-    .xp .sub{color:var(--muted); font-size:14px}
-    .xp ul{margin:10px 0 0 0; padding-left:18px; color:var(--text)}
-    .xp li{margin:6px 0}
-    /* Skills */
-    .skill-groups{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
-    .card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:16px; box-shadow:var(--shadow)}
-    .card h3{margin:0 0 8px 0; font-size:16px}
-    .tags{display:flex; gap:8px; flex-wrap:wrap}
-    .tag{border:1px solid var(--line); border-radius:10px; padding:6px 10px; font-size:13px; color:var(--muted)}
-    @media (max-width:780px){.skill-groups{grid-template-columns:1fr}}
-    /* Contact */
-    .contact-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
-    @media (max-width:780px){.contact-grid{grid-template-columns:1fr}}
-    .contact-item{display:flex; align-items:center; gap:10px}
-    .icon{inline-size:18px; block-size:18px}
-    /* Reveal on scroll */
-    .reveal{opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease}
-    .reveal.visible{opacity:1; transform:none}
-    /* Footer */
-    footer{padding:40px 0; color:var(--muted); text-align:center}
-  </style>
+  <title>Prathik Bafna | Portfolio</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <meta name="description" content="Prathik Bafna — Data Engineer / Software Engineer / Data Scientist portfolio. Role-specific pages for SWE, DE, DS, MLE, DA." />
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#home" aria-label="Home">
-        <span class="logo">PB</span> <span>Prathik Bharath Jain</span>
-      </a>
-      <nav aria-label="Main">
-        <button class="btn ghost menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
-        <ul id="menu">
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#certifications">Certifications</a></li>
-          <li><a href="#achievements">Achievements</a></li>
-          <li><a href="#recommendations">Recommendations</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="actions">
-        <a class="btn ghost" href="https://github.com/prathikbafna" target="_blank" rel="noreferrer" aria-label="GitHub">GitHub</a>
-        <a class="btn primary" href="assets/resume/Prathik_Bharath_Jain_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+
+  <div class="nav">
+    <div class="brand">
+      <span class="dot"></span>
+      <a href="/" class="projectTitle">Prathik Bafna</a>
+    </div>
+    <div class="links">
+      <a class="pill" href="/projects/">Projects</a>
+      <a class="pill" href="/experience/">Experience</a>
+      <a class="pill" href="/swe/">SWE</a>
+      <a class="pill" href="/de/">DE</a>
+      <a class="pill" href="/ds/">DS</a>
+      <a class="pill" href="/mle/">MLE</a>
+      <a class="pill" href="/da/">DA</a>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="hero">
+    <h1>Shipping reliable data + software systems.</h1>
+    <div class="subtitle">
+      I’m Prathik — I’ve built backend services and data platforms across payments, manufacturing, and utilities.
+      Use the role pages to see the most relevant proof for the job you’re hiring for.
+    </div>
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+      <a class="btn" href="mailto:prathikbafna0@gmail.com">Email</a>
+      <a class="btn" href="https://www.linkedin.com/prathik-bharath-jain" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="btn" href="https://github.com/prathikbafna" target="_blank" rel="noreferrer">GitHub</a>
+      <a class="btn" href="/assets/resume/Prathik_Bharath_Jain_DE.pdf" target="_blank" rel="noreferrer">Resume (DE)</a>
+    </div>
+
+    <div class="kpi">
+      <div class="item"><b>75+</b> pipelines built</div>
+      <div class="item"><b>92%</b> latency reduction (payment verification)</div>
+      <div class="item"><b>95%</b> traffic migration (payments)</div>
+      <div class="item"><b>60%</b> troubleshooting time reduced</div>
+    </div>
+    <small class="muted">Numbers are pulled from your current resumes; we’ll refine/verify them as we iterate.</small>
+  </div>
+
+  <div class="grid">
+    <div class="card third">
+      <div class="sectionTitle">Pick a role</div>
+      <div class="badges">
+        <a class="pill" href="./de/">Data Engineer →</a>
+        <a class="pill" href="./swe/">Software Engineer →</a>
+        <a class="pill" href="./ds/">Data Scientist →</a>
+        <a class="pill" href="./mle/">ML Engineer →</a>
+        <a class="pill" href="./da/">Data Analyst →</a>
       </div>
     </div>
-  </header>
 
-  <main>
-    <!-- HERO -->
-    <section id="home" class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="kicker">Software Engineer · Data Engineer · Data Scientist</div>
-          <h1>Hi, I’m <span style="color:var(--brand)">Prathik</span> — I turn messy data into useful products.</h1>
-          <p class="lead">Streaming pipelines, analytics models, and dashboards that ship and drive decisions. I like pragmatic systems and measurable outcomes.</p>
-          <p style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap">
-            <a class="btn primary" href="#projects">See Projects</a>
-            <a class="btn" href="#contact">Hire Me</a>
-          </p>
-        </div>
-        <aside class="hero-cards">
-          <div class="aspect-video">
-            <img src="assets/img/passport-new.jpg" alt="Portrait of Prathik" />
-          </div>
-          <div class="meta">
-            <div>📍 Based in America/Denver</div>
-            <div>💼 AtkinsRéalis — Data Scientist</div>
-            <div>🎓 CU Boulder — MS DS (4.0)</div>
-            <div>✉️ <a href="mailto:prathikbafna0@gmail.com">prathikbafna0@gmail.com</a></div>
-          </div>
-        </aside>
+    <div class="card third">
+      <div class="sectionTitle">What I optimize for</div>
+      <ul class="projectMeta">
+        <li>Production readiness (monitoring, idempotency, runbooks)</li>
+        <li>Clear stakeholder outcomes (KPIs, dashboards, business impact)</li>
+        <li>Strong engineering fundamentals (APIs, distributed systems, data modeling)</li>
+      </ul>
+    </div>
+
+    <div class="card third">
+      <div class="sectionTitle">Currently</div>
+      <div class="projectMeta">
+        Data Scientist at AtkinsRéalis (Denver) working on pipeline burst prediction + analytics dashboards.
       </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="container reveal">
-      <div class="section-head">
-        <h2>Highlighted Projects</h2>
-        <p class="muted">A few things I built or led recently.</p>
+      <div class="hr"></div>
+      <div class="projectMeta">
+        Previous: Software Engineer (payments) at Zee, Data Engineering Intern at Lincoln Electric.
       </div>
-      <div class="grid projects">
-        <article class="project">
-          <div class="aspect-video"><img src="assets/img/social_pulse.webp" alt="Social Pulse dashboard screenshot"></div>
-          <div class="body">
-            <h3>Social Pulse</h3>
-            <p class="muted">Unified YouTube/Reddit/X/Tumblr analysis with topic modeling → faster brand intel extraction.</p>
-            <div class="chips">
-              <span class="chip">Airflow</span><span class="chip">MongoDB</span><span class="chip">Python</span><span class="chip">NLP</span>
-            </div>
-            <div class="links">
-              <a href="https://github.com/prathikbafna/Social-Pulse" target="_blank" rel="noreferrer">Source ↗</a>
-            </div>
-          </div>
-        </article>
-        <article class="project">
-          <div class="aspect-video"><img src="assets/img/stream_forge.jpg" alt="Stream processing architecture"></div>
-          <div class="body">
-            <h3>Stream Forge</h3>
-            <p class="muted">API → Kafka → Spark → Cassandra pipeline on AWS for low-latency analytics feeds.</p>
-            <div class="chips">
-              <span class="chip">Spark</span><span class="chip">Kafka</span><span class="chip">Airflow</span><span class="chip">AWS</span>
-            </div>
-          </div>
-        </article>
-        <article class="project">
-          <div class="aspect-video"><img src="assets/projects/job-genie.jpg" alt="Jobs analytics visualization"></div>
-          <div class="body">
-            <h3>Job Genie</h3>
-            <p class="muted">Skills clusters & seasonality tied to GDP → informed hiring/curriculum decisions.</p>
-            <div class="chips">
-              <span class="chip">Python</span><span class="chip">R</span><span class="chip">Postgres</span><span class="chip">ML</span>
-            </div>
-            <div class="links">
-              <a href="#">Live Demo ↗</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="container reveal">
-      <div class="section-head"><h2>Experience</h2></div>
-      <div class="xp-list">
-        <article class="xp">
-          <h3>AtkinsRéalis <span class="muted">· Data Scientist</span></h3>
-          <div class="sub">July 2025 – Present · Denver, CO, USA</div>
-          <ul>
-            <li>Building an ML model to predict water pipeline bursts for DC Water using historical data.</li>
-          </ul>
-          <p class="chips" aria-label="tools">
-            <span class="chip">Python</span><span class="chip">Azure</span><span class="chip">PySpark</span><span class="chip">Power Automate</span><span class="chip">RAG</span><span class="chip">Power BI</span>
-          </p>
-        </article>
-        <article class="xp">
-          <h3>Lincoln Electric <span class="muted">· Data Engineer</span></h3>
-          <div class="sub">May 2024 – May 2025 · Cleveland, OH (Hybrid)</div>
-          <ul>
-            <li>Built Azure Data Factory pipelines (Spark/Databricks, medallion architecture) powering BI.</li>
-            <li>Integrated SAP OData + table connectors into Synapse; designed robust incremental upserts.</li>
-            <li>Migrated Alteryx → Azure; ported Oracle procs → SQL Server; cut runtime ~75%.</li>
-            <li>Pulled Power BI logs → Azure, built monitoring dashboards for proactive insights.</li>
-          </ul>
-          <p class="chips" aria-label="tools">
-            <span class="chip">Python</span><span class="chip">Azure</span><span class="chip">PySpark</span><span class="chip">ADF</span><span class="chip">SAP</span><span class="chip">Power BI</span>
-          </p>
-        </article>
-        <article class="xp">
-          <h3>Gil Lab (CU Boulder) <span class="muted">· Machine Learning Technician</span></h3>
-          <div class="sub">Sep 2023 – May 2024 · Boulder, CO</div>
-          <ul>
-            <li>Tuned YOLOv8 for small‑object detection; built BOT‑SORT tracking (93.87% accuracy).</li>
-          </ul>
-          <p class="chips"><span class="chip">Python</span><span class="chip">OpenCV</span><span class="chip">Keras</span><span class="chip">TensorFlow</span><span class="chip">PyTorch</span></p>
-        </article>
-        <article class="xp">
-          <h3>Zee5 <span class="muted">· Software Development Engineer</span></h3>
-          <div class="sub">Jan 2022 – Jul 2023 · Bangalore, India</div>
-          <ul>
-            <li>Rebuilt Apple payment token verification, cutting API latency by ~90%.</li>
-            <li>Led Juspay Express Checkout integration; improved success rates → ~$2.5M annual lift.</li>
-            <li>Designed generic S2S notification handler to reduce cloud cost and improve reliability.</li>
-          </ul>
-          <p class="chips"><span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">Python</span><span class="chip">Postgres</span><span class="chip">MongoDB</span><span class="chip">AWS</span></p>
-        </article>
-      </div>
-    </section>
+  <div style="margin-top:22px">
+    <div class="sectionTitle">Featured projects</div>
+    <div class="grid" id="projects"></div>
+  </div>
 
-    <!-- SKILLS -->
-    <section id="skills" class="container reveal">
-      <div class="section-head"><h2>Skills</h2></div>
-      <div class="skill-groups">
-        <div class="card">
-          <h3>Languages</h3>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Java</span><span class="tag">R</span><span class="tag">SQL</span><span class="tag">Bash</span></div>
-        </div>
-        <div class="card">
-          <h3>Data & Warehousing</h3>
-          <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">Synapse</span><span class="tag">dbt</span></div>
-        </div>
-        <div class="card">
-          <h3>ML & Analytics</h3>
-          <div class="tags"><span class="tag">Pandas</span><span class="tag">Scikit‑learn</span><span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">OpenCV</span></div>
-        </div>
-        <div class="card">
-          <h3>Cloud & DevOps</h3>
-          <div class="tags"><span class="tag">Azure</span><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">Airflow</span><span class="tag">Kafka</span></div>
-        </div>
-      </div>
-    </section>
+  <div class="footer">© <span id="y"></span> Prathik Bafna • Built for GitHub Pages</div>
+</div>
 
-    <!-- EDUCATION -->
-    <section id="education" class="container reveal">
-      <div class="section-head"><h2>Education</h2></div>
-      <div class="grid" style="grid-template-columns:repeat(2,1fr); gap:14px">
-        <div class="card">
-          <h3>University of Colorado Boulder</h3>
-          <p class="muted">Boulder, CO</p>
-          <ul>
-            <li>MS in Data Science · GPA 4.0/4.0</li>
-            <li>Info Viz, Data Mining, ML, Data Center Scale Computing, Cyber Security, Capstone</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>PES University</h3>
-          <p class="muted">Bangalore, India</p>
-          <ul>
-            <li>B.Tech in Computer Science Engineering · CGPA 8.4/10</li>
-            <li>DSA, DBMS, Big Data Architecture, DL, OS, ML, CV</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="container reveal">
-      <div class="section-head">
-        <h2>Contact</h2>
-        <p class="muted">Open to full‑time data roles and interesting side collaborations.</p>
-      </div>
-      <div class="contact-grid">
-        <div class="card"><div class="contact-item">✉️ <a href="mailto:prathikbafna0@gmail.com">prathikbafna0@gmail.com</a></div></div>
-        <div class="card"><div class="contact-item">📞 <a href="tel:+17209904940">+1 720‑990‑4940</a></div></div>
-        <div class="card"><div class="contact-item">🐙 <a href="https://github.com/prathikbafna" target="_blank" rel="noreferrer">github.com/prathikbafna</a></div></div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    © <span id="year"></span> Prathik Bharath Jain · Pure HTML/CSS • No frameworks
-  </footer>
-
-  <script>
-    // Current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mobile menu toggle (accessible)
-    const btn = document.querySelector('.menu-btn');
-    const menu = document.getElementById('menu');
-    btn?.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-      menu.style.display = expanded ? 'none' : 'flex';
-      menu.style.flexDirection = 'column';
-      menu.style.gap = '12px';
-      menu.style.paddingTop = '12px';
-    });
-
-    // Reveal on scroll
-    const revealEls = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} })
-    },{threshold:.12});
-    revealEls.forEach(el=>io.observe(el));
-
-    // Respect reduced motion
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-      revealEls.forEach(el=>el.classList.add('visible'));
-    }
-  </script>
-
-  <!-- Simple Person schema for richer preview (optional) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Prathik Bharath Jain",
-    "url": "https://your-username.github.io/",
-    "jobTitle": "Data Scientist",
-    "sameAs": [
-      "https://github.com/prathikbafna",
-      "https://www.linkedin.com/in/prathik-bharath-jain"
-    ]
-  }
-  </script>
+<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+<script>
+  window.PROJECT_LIMIT = 4;
+</script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>
