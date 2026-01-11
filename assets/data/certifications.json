@@ -1,0 +1,54 @@
+[
+  {
+    "title": "SQL (Advanced) Certificate",
+    "issuer": "HackerRank",
+    "issued": "May 2025",
+    "skills": [
+      "SQL",
+      "Data Analysis"
+    ],
+    "credential": "https://www.hackerrank.com/certificates/iframe/d84e06bac80a"
+  },
+  {
+    "title": "dbt Fundamentals",
+    "issuer": "dbt Labs",
+    "issued": "May 2025",
+    "skills": [
+      "dbt",
+      "SQL"
+    ],
+    "credential": ""
+  },
+  {
+    "title": "Snowflake \u2013 The Complete Masterclass",
+    "issuer": "Udemy",
+    "issued": "Apr 2025",
+    "skills": [
+      "Snowflake",
+      "ETL",
+      "Data Engineering",
+      "Data Administration"
+    ],
+    "credential": ""
+  },
+  {
+    "title": "Expressway to Data Science: R Programming and Tidyverse Specialization",
+    "issuer": "Coursera (or equivalent)",
+    "issued": "",
+    "skills": [
+      "R",
+      "Tidyverse"
+    ],
+    "credential": ""
+  },
+  {
+    "title": "Expressway to Data Science: Essential Math Specialization",
+    "issuer": "Coursera (or equivalent)",
+    "issued": "",
+    "skills": [
+      "Math",
+      "Statistics"
+    ],
+    "credential": ""
+  }
+]

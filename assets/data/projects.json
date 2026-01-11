@@ -183,5 +183,55 @@
       "Improved typing efficiency with n-gram prediction to reduce keystrokes",
       "Integrated smart-home controls to demonstrate real-world ML impact"
     ]
+  },
+  {
+    "title": "AI-Powered Job-Specific Resume Generator",
+    "summary": "Streamlit app that takes a job posting URL + candidate profile, extracts requirements, and generates an ATS-optimized Word/PDF resume using local LLMs via Ollama; deployed on Azure.",
+    "tags": [
+      "swe",
+      "de",
+      "mle",
+      "ds"
+    ],
+    "stack": [
+      "Python",
+      "Streamlit",
+      "Ollama",
+      "Azure",
+      "Document Generation"
+    ],
+    "links": {
+      "github": "",
+      "demo": ""
+    },
+    "highlights": [
+      "Automated job description extraction and skill/keyword matching to tailor resumes",
+      "End-to-end ownership: LLM orchestration, backend logic, document generation, and Azure deployment"
+    ]
+  },
+  {
+    "title": "Stock Market Pipeline",
+    "summary": "Production-like ELT pipeline with Airflow to fetch, stage, and load stock data; containerized stack with Docker, MinIO, and Postgres following medallion-style layers.",
+    "tags": [
+      "de",
+      "swe",
+      "da"
+    ],
+    "stack": [
+      "Airflow",
+      "Docker",
+      "MinIO",
+      "PostgreSQL",
+      "Python",
+      "SQL"
+    ],
+    "links": {
+      "github": "https://github.com/prathikbafna/stock-market-pipeline",
+      "demo": ""
+    },
+    "highlights": [
+      "Failure-resilient workflows using sensors/operators and containerized execution",
+      "Decoupled ingestion from transformation with raw \u2192 processed \u2192 curated separation"
+    ]
   }
 ]

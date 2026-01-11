@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recommendations | Prathik Bafna</title>
+  <meta name="description" content="Selected LinkedIn recommendations." />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body>
+  <div class="nav">
+    <div><a href="/" class="projectTitle">← Home</a></div>
+    <div class="links">
+      <a class="pill" href="/projects/">Projects</a>
+      <a class="pill" href="/experience/">Experience</a>
+      <a class="pill" href="/certifications/">Certifications</a>
+      <a class="pill" href="/recommendations/">Recommendations</a>
+      <a class="pill" href="/de/">DE</a>
+      <a class="pill" href="/swe/">SWE</a>
+      <a class="pill" href="/ds/">DS</a>
+      <a class="pill" href="/mle/">MLE</a>
+      <a class="pill" href="/da/">DA</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero">
+      <h1>Recommendations</h1>
+      <div class="subtitle">A few notes from people I’ve worked with.</div>
+    </div>
+
+    <div class="grid" id="recs"></div>
+
+    <div class="footer">Want more context? I can link each quote to the original recommendation if you prefer.</div>
+  </div>
+
+  <script>
+    async function run(){
+      const res = await fetch("/assets/data/recommendations.json");
+      const recs = await res.json();
+      const el = document.getElementById("recs");
+      el.innerHTML = recs.map(r => {
+        return `
+          <div class="card">
+            <div class="projectTitle">${r.name}</div>
+            <div class="projectMeta">${r.title || ""}</div>
+            <div class="badges">
+              <span class="badge">${r.relationship || ""}</span>
+              <span class="badge">${r.date || ""}</span>
+            </div>
+            <div class="projectMeta" style="margin-top:10px; font-size:15px; line-height:1.7;">
+              “${r.quote}”
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+    run();
+  </script>
+</body>
+</html>

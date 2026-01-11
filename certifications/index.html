@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Certifications | Prathik Bafna</title>
+  <meta name="description" content="Certifications and courses." />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body>
+  <div class="nav">
+    <div><a href="/" class="projectTitle">← Home</a></div>
+    <div class="links">
+      <a class="pill" href="/projects/">Projects</a>
+      <a class="pill" href="/experience/">Experience</a>
+      <a class="pill" href="/certifications/">Certifications</a>
+      <a class="pill" href="/recommendations/">Recommendations</a>
+      <a class="pill" href="/de/">DE</a>
+      <a class="pill" href="/swe/">SWE</a>
+      <a class="pill" href="/ds/">DS</a>
+      <a class="pill" href="/mle/">MLE</a>
+      <a class="pill" href="/da/">DA</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero">
+      <h1>Certifications</h1>
+      <div class="subtitle">A quick list of credentials and coursework relevant to data, analytics, and engineering.</div>
+    </div>
+
+    <div class="grid" id="certs"></div>
+
+    <div class="footer">Tip: keep this list short and high-signal.</div>
+  </div>
+
+  <script>
+    async function run(){
+      const res = await fetch("/assets/data/certifications.json");
+      const certs = await res.json();
+      const el = document.getElementById("certs");
+      el.innerHTML = certs.map(c => {
+        const skills = (c.skills||[]).map(s => `<span class="badge">${s}</span>`).join("");
+        const cred = c.credential ? `<a class="pill" href="${c.credential}" target="_blank" rel="noreferrer">Credential</a>` : "";
+        const issued = c.issued ? `• <span class="badge">${c.issued}</span>` : "";
+        return `
+          <div class="card half">
+            <div class="projectTitle">${c.title}</div>
+            <div class="projectMeta">${c.issuer || ""} ${issued}</div>
+            <div class="badges">${skills}</div>
+            <div class="badges">${cred}</div>
+          </div>
+        `;
+      }).join("");
+    }
+    run();
+  </script>
+</body>
+</html>
